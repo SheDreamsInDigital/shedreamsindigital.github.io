@@ -3,194 +3,200 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>She Dreams In Digital</title>
-        <!-- Favicon-->
+        <meta name="description" content="A private, mobile-friendly personal goals web app that can learn from an uploaded tracker layout and stores progress in the browser." />
+        <meta name="author" content="She Dreams In Digital" />
+        <title>Personal Goals Studio | She Dreams In Digital</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Simple line icons-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-        <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
-        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-        <nav id="sidebar-wrapper">
+        <a class="menu-toggle rounded" href="#" aria-label="Open navigation"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper" aria-label="Main navigation">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Start Bootstrap</a></li>
-                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="#about">About</a></li>
-                <li class="sidebar-nav-item"><a href="#services">Services</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
-                <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
+                <li class="sidebar-brand"><a href="#page-top">Goals Studio</a></li>
+                <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#page-top">Home</a></li>
+                <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#goals">Goals</a></li>
+                <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#upload">Upload Layout</a></li>
+                <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#needs">What to Send</a></li>
             </ul>
         </nav>
-        <!-- Header-->
-        <header class="masthead d-flex align-items-center">
-            <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">She Dreams In Digital</h1>
-                <h3 class="mb-5"><em>A landing page for all of my projects</em></h3>
-                <a class="btn btn-primary btn-xl" href="#about">Find out what I've been up to lately.</a>
+
+        <header class="goals-hero d-flex align-items-center">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <p class="eyebrow mb-3">She Dreams In Digital</p>
+                        <h1 class="mb-3">A private goals app shaped around your tracker layout.</h1>
+                        <p class="lead mb-4">Upload or paste an exported copy of your current tracker, turn its sections into goal cards, and track progress from desktop or mobile browsers without a Notion relay.</p>
+                        <div class="d-flex flex-column flex-sm-row gap-3">
+                            <a class="btn btn-primary btn-xl" href="#goals">Open my goals</a>
+                            <a class="btn btn-outline-light btn-xl" href="#upload">Upload tracker layout</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="goals-card hero-summary shadow-lg">
+                            <span class="hero-card__icon"><i class="icon-target"></i></span>
+                            <h2 class="h4">Today&apos;s focus</h2>
+                            <div class="focus-stats" aria-label="Goal summary">
+                                <div><strong id="hero-goal-count">0</strong><span>Goals</span></div>
+                                <div><strong id="hero-done-count">0</strong><span>Done today</span></div>
+                                <div><strong id="hero-area-count">0</strong><span>Areas</span></div>
+                            </div>
+                            <p class="small mb-0 text-muted">Everything is stored locally in this browser until you choose to export it.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
-        <!-- About-->
-        <section class="content-section bg-light" id="about">
-            <div class="container px-4 px-lg-5 text-center">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-10">
-                        <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                        <p class="lead mb-5">
-                            This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-                            <a href="https://unsplash.com/">Unsplash</a>
-                            !
-                        </p>
-                        <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
+
+        <main>
+            <section class="content-section bg-light" id="goals">
+                <div class="container px-4 px-lg-5">
+                    <div class="content-section-heading text-center">
+                        <h3 class="text-secondary mb-0">Personal goals</h3>
+                        <h2 class="mb-5">Plan, check in, and review</h2>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-5">
+                            <form class="goals-card" id="goal-form">
+                                <h3 class="h4 mb-3">Add a goal</h3>
+                                <div class="mb-3">
+                                    <label class="form-label" for="goal-title">Goal</label>
+                                    <input class="form-control form-control-lg" id="goal-title" name="title" type="text" placeholder="e.g. Write every morning" autocomplete="off" required />
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="goal-area">Life area</label>
+                                        <input class="form-control" id="goal-area" name="area" type="text" placeholder="Health, Work, Home" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="goal-cadence">Cadence</label>
+                                        <select class="form-select" id="goal-cadence" name="cadence">
+                                            <option value="Daily">Daily</option>
+                                            <option value="Weekly">Weekly</option>
+                                            <option value="Monthly">Monthly</option>
+                                            <option value="As needed">As needed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <label class="form-label" for="goal-target">Target</label>
+                                    <input class="form-control" id="goal-target" name="target" type="text" placeholder="e.g. 20 minutes, 3 times, one page" />
+                                </div>
+                                <div class="mt-3">
+                                    <label class="form-label" for="goal-notes">Notes</label>
+                                    <textarea class="form-control" id="goal-notes" name="notes" rows="3" placeholder="Why this matters, reminders, or success criteria"></textarea>
+                                </div>
+                                <div class="quick-actions mt-3" aria-label="Quick goal choices">
+                                    <button type="button" data-goal="Move my body" data-area="Health">Move</button>
+                                    <button type="button" data-goal="Make progress on a creative project" data-area="Creative">Create</button>
+                                    <button type="button" data-goal="Reset my space" data-area="Home">Reset</button>
+                                    <button type="button" data-goal="Reflect and journal" data-area="Mindset">Reflect</button>
+                                </div>
+                                <div class="status-banner mt-4" id="status-banner" role="status" aria-live="polite">Ready when you are.</div>
+                                <div class="d-grid d-sm-flex gap-3 mt-4">
+                                    <button class="btn btn-primary btn-xl" type="submit">Save goal</button>
+                                    <button class="btn btn-dark btn-xl" id="export-goals" type="button">Export JSON</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-7">
+                            <section class="goals-card h-100" aria-labelledby="goal-board-heading">
+                                <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 mb-3">
+                                    <div>
+                                        <h3 class="h4 mb-1" id="goal-board-heading">Goal board</h3>
+                                        <p class="text-muted mb-0">Check off today&apos;s progress, edit your uploaded goals, or remove what no longer fits.</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-dark align-self-start" id="clear-goals" type="button">Clear local goals</button>
+                                </div>
+                                <div class="goal-board" id="goal-board"></div>
+                            </section>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Services-->
-        <section class="content-section bg-primary text-white text-center" id="services">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading">
-                    <h3 class="text-secondary mb-0">Services</h3>
-                    <h2 class="mb-5">What We Offer</h2>
-                </div>
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
-                        <h4><strong>Responsive</strong></h4>
-                        <p class="text-faded mb-0">Looks great on any screen size!</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
-                        <h4><strong>Redesigned</strong></h4>
-                        <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
-                        <h4><strong>Favorited</strong></h4>
-                        <p class="text-faded mb-0">
-                            Millions of users
-                            <i class="fas fa-heart"></i>
-                            Start Bootstrap!
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
-                        <h4><strong>Question</strong></h4>
-                        <p class="text-faded mb-0">I mustache you a question...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Callout-->
-        <section class="callout">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mx-auto mb-5">
-                    Welcome to
-                    <em>your</em>
-                    next website!
-                </h2>
-                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
-            </div>
-        </section>
-        <!-- Portfolio-->
-        <section class="content-section" id="portfolio">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Portfolio</h3>
-                    <h2 class="mb-5">Recent Projects</h2>
-                </div>
-                <div class="row gx-0">
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Stationary</div>
-                                    <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+            </section>
+
+            <section class="content-section" id="upload">
+                <div class="container px-4 px-lg-5">
+                    <div class="row g-4 align-items-stretch">
+                        <div class="col-lg-6">
+                            <div class="goals-card h-100">
+                                <div class="content-section-heading text-center">
+                                    <h3 class="text-secondary mb-0">Tracker layout</h3>
+                                    <h2 class="mb-4">Upload or paste your tracker</h2>
+                                </div>
+                                <p class="lead">Yes — if you give me an upload/export version of your tracker page, this app can use the present layout as the starting point for your personal goals experience.</p>
+                                <label class="upload-dropzone" for="tracker-upload">
+                                    <i class="icon-cloud-upload"></i>
+                                    <strong>Choose an exported tracker file</strong>
+                                    <span>HTML, CSV, Markdown, TXT, or JSON works best.</span>
+                                </label>
+                                <input class="visually-hidden" id="tracker-upload" type="file" accept=".html,.htm,.csv,.json,.md,.txt,text/*,application/json" />
+                                <label class="form-label mt-4" for="tracker-paste">Or paste tracker text / section names</label>
+                                <textarea class="form-control" id="tracker-paste" rows="7" placeholder="Paste headings, table rows, goals, habits, or exported tracker text here."></textarea>
+                                <div class="d-grid d-sm-flex gap-3 mt-4">
+                                    <button class="btn btn-primary" id="analyze-layout" type="button">Build draft goals</button>
+                                    <button class="btn btn-outline-dark" id="clear-import" type="button">Clear import</button>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Ice Cream</div>
-                                    <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <aside class="goals-card h-100">
+                                <h3 class="h4">Imported layout preview</h3>
+                                <p class="text-muted">Detected sections appear here before they become goal cards. You can still edit everything after import.</p>
+                                <div class="layout-preview" id="layout-preview">
+                                    <p class="empty-state">No tracker layout imported yet.</p>
                                 </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-2.jpg" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Strawberries</div>
-                                    <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-3.jpg" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Workspace</div>
-                                    <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio-4.jpg" alt="..." />
-                        </a>
+                            </aside>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Call to Action-->
-        <section class="content-section bg-primary text-white">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-                <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
-                <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
-            </div>
-        </section>
-        <!-- Map-->
-        <div class="map" id="contact">
-            <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-            <br />
-            <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
-        </div>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container px-4 px-lg-5">
-                <ul class="list-inline mb-5">
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-                    </li>
-                </ul>
-                <p class="text-muted small mb-0">Copyright &copy; Your Website 2023</p>
-            </div>
-        </footer>
-        <!-- Scroll to Top Button-->
+            </section>
+
+            <section class="content-section bg-primary text-white" id="needs">
+                <div class="container px-4 px-lg-5">
+                    <div class="content-section-heading text-center">
+                        <h3 class="text-secondary mb-0">Next steps</h3>
+                        <h2 class="mb-5">What to upload or tell me</h2>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-xl-3">
+                            <div class="need-card h-100">
+                                <span>1</span>
+                                <h3 class="h5">Tracker export</h3>
+                                <p>Upload an HTML, CSV, Markdown, text, or JSON export of your current tracker layout.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="need-card h-100">
+                                <span>2</span>
+                                <h3 class="h5">Goal areas</h3>
+                                <p>Share the categories that matter most, such as Health, Creative, Home, Relationships, or Career.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="need-card h-100">
+                                <span>3</span>
+                                <h3 class="h5">Tracking style</h3>
+                                <p>Tell me whether you prefer streaks, daily checkboxes, weekly reviews, progress notes, or a dashboard.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="need-card h-100">
+                                <span>4</span>
+                                <h3 class="h5">Privacy choice</h3>
+                                <p>Keep everything browser-only, or later add an optional sync/export destination if you want one.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
         <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
 </html>

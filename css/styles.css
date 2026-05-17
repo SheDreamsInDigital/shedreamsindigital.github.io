@@ -11108,3 +11108,321 @@ footer.footer .social-link:hover {
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
+/* Personal Goals Studio custom styles */
+.goals-hero {
+  min-height: 100vh;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(29, 128, 159, 0.92), rgba(25, 51, 82, 0.88)), url('../assets/img/bg-masthead.jpg') center center / cover no-repeat;
+}
+
+.goals-hero h1 {
+  font-size: clamp(2.5rem, 8vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.goals-card {
+  border: 0;
+  border-radius: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgba(15, 23, 42, 0.10);
+}
+
+.hero-summary {
+  color: #1f2937;
+}
+
+.focus-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.focus-stats div {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #f1f5f9;
+  text-align: center;
+}
+
+.focus-stats strong,
+.focus-stats span {
+  display: block;
+}
+
+.focus-stats strong {
+  color: #1d809f;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.focus-stats span {
+  margin-top: 0.35rem;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.goal-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.goal-card {
+  display: flex;
+  min-height: 15rem;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+.goal-card__header,
+.goal-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.goal-card h4 {
+  margin-bottom: 0;
+}
+
+.goal-card p {
+  flex: 1;
+  margin-bottom: 0;
+  color: #64748b;
+}
+
+.goal-card__remove {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: #64748b;
+  background: #e2e8f0;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.goal-card__remove:hover,
+.goal-card__remove:focus {
+  color: #fff;
+  background: #dc3545;
+}
+
+.area-pill {
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  color: #075985;
+  background: #e0f2fe;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.goal-progress {
+  height: 0.65rem;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.goal-progress .progress-bar {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1d809f, #ecb807);
+}
+
+.upload-dropzone {
+  display: grid;
+  min-height: 12rem;
+  place-items: center;
+  padding: 2rem;
+  border: 2px dashed rgba(29, 128, 159, 0.45);
+  border-radius: 1.5rem;
+  background: rgba(29, 128, 159, 0.06);
+  color: #1f2937;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-dropzone i {
+  color: #1d809f;
+  font-size: 2.5rem;
+}
+
+.upload-dropzone span {
+  color: #64748b;
+}
+
+.layout-preview {
+  display: grid;
+  gap: 1rem;
+}
+
+.import-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #f1f5f9;
+}
+
+.import-meta span {
+  color: #64748b;
+}
+
+.import-list {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.import-list li {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+}
+
+.import-list span {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.layout-preview pre {
+  max-height: 16rem;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 575.98px) {
+  .goals-hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .focus-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eyebrow {
+  color: #ecb807;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.btn-outline-light {
+  border-width: 2px;
+}
+
+.hero-card__icon {
+  display: inline-grid;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: #1d809f;
+  font-size: 1.5rem;
+}
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.quick-actions button {
+  border: 1px solid rgba(29, 128, 159, 0.35);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  color: #1d809f;
+  background: rgba(29, 128, 159, 0.08);
+  font-weight: 700;
+}
+
+.quick-actions button:focus,
+.quick-actions button:hover {
+  color: #fff;
+  background: #1d809f;
+}
+
+.status-banner {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #e0f2fe;
+  color: #075985;
+  font-weight: 700;
+}
+
+.status-banner[data-status='success'] {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-banner[data-status='warning'] {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-banner[data-status='error'] {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 1rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.need-card {
+  height: 100%;
+  border: 0;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  color: #1f2937;
+  background: #fff;
+  box-shadow: 0 1rem 2.5rem rgba(15, 23, 42, 0.12);
+}
+
+.need-card span {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: #1d809f;
+  font-weight: 700;
+}
+
+.need-card p {
+  margin-bottom: 0;
+  color: #475569;
+}
